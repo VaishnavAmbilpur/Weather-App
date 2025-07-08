@@ -9,22 +9,16 @@ import { CloudSunIcon } from "lucide-react"
 import { MoonIcon } from "lucide-react"
 import { HeaterIcon } from "lucide-react"
 import { WindIcon } from "lucide-react"
-import React, { useEffect, useState, type ReactElement } from "react"
+import  { useEffect, useState, type ReactElement } from "react"
 import { useRef } from "react"
 type Data = {
   humidity: number;
   windspeed: number;
   Temp: number;
 };
-type icons ={
-    Clouds : ReactElement,
-    cloudRain : ReactElement,
-    cloudSun : ReactElement,
-    sun : ReactElement,
-    Moon : ReactElement
-}
+
 export const Hero = () => {
-  const icons : icons ={Clouds:<Cloud></Cloud> , cloudRain:<CloudRainIcon></CloudRainIcon> , cloudSun :<CloudSunIcon></CloudSunIcon> , sun:<SunIcon></SunIcon>,Moon:<MoonIcon></MoonIcon>}
+
   const city = useRef<HTMLInputElement>(null);
   const [weatherData, setWeatherData] = useState<Data>({
     humidity: 0,
@@ -34,9 +28,6 @@ export const Hero = () => {
   const [sun,setsun] = useState<boolean>(true);
    const now : any = new Date();
      const hours  :any = now.getHours();
-    const minutes :any = now.getMinutes();
-    const seconds :any= now.getSeconds();
-    const milliseconds :any= now.getMilliseconds();
     if(hours>=19){
         setsun(false);
     }
