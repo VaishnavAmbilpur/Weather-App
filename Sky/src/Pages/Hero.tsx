@@ -1,15 +1,14 @@
 import { ModeToggle } from "@/components/mode-toggle"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { Cloud, SearchIcon } from "lucide-react"
+import {  SearchIcon } from "lucide-react"
 import "../App.css"
 import { SunIcon } from "lucide-react"
-import { CloudRainIcon } from "lucide-react"
-import { CloudSunIcon } from "lucide-react"
+
 import { MoonIcon } from "lucide-react"
 import { HeaterIcon } from "lucide-react"
 import { WindIcon } from "lucide-react"
-import  { useEffect, useState, type ReactElement } from "react"
+import  { useEffect, useState, } from "react"
 import { useRef } from "react"
 type Data = {
   humidity: number;
