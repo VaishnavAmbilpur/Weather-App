@@ -1,0 +1,7 @@
+@font-face {
+  font-family: JSans;
+  src: url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+}
+@theme{
+    --font-jans : JSans , 'sans-serif' 
+}
