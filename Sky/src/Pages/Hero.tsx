@@ -71,7 +71,7 @@ export const Hero = () => {
   return (
     <div className="min-h-screen my-auto min-w-screen p-10 flex flex-col justify-center-safe items-center font-semibold ">
      
-        <div className="font-Abel my-2 text-3xl tracking-widest flex gap-x-2 animate-pulse">Sky - <div> Weather App</div></div>
+        <div className="font-Abel my-2 text-3xl tracking-widest flex gap-x-2 animate-pulse font-extrabold">Sky - <div> Weather App</div></div>
         <div className="bg-accent h-100 w-88 p-4 rounded-2xl">
             <div className="w-full flex justify-between h-fit gap-x-2 items-center">
             
@@ -88,7 +88,7 @@ export const Hero = () => {
                   </div>
             </div>
         </div>
-        <footer className="m-4 fixed bottom-2 w-full flex justify-center-safe  items-center-safe animate-pulse text-md">
+        <footer className="m-4 fixed bottom-2 w-full flex justify-center-safe  items-center-safe  text-md">
           <div className="font-Abel font-extrabold m-3"><span className="mx-2">---</span><span className="font-mono mx-2 tracking-tighter font-bold text-sky-400"><span className="text-xl">V</span>aishnav</span></div>
            <Avatar className="h-10 w-10">
   <AvatarImage src="/src/assets/Profile 2.jpg" />
