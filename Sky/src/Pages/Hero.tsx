@@ -27,9 +27,14 @@ export const Hero = () => {
   const [sun,setsun] = useState<boolean>(true);
    const now : any = new Date();
      const hours  :any = now.getHours();
-    if(hours>=19){
+     const night = () :void => {
+      if(hours>=19){
         setsun(false);
-    }
+       }else {
+      setsun(true);
+        }
+     }
+    
   const search = async(city: string):Promise<void>=>{
       try{
          const url =`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${'72c183bfde0f64045a4054a529728e63'}`;
@@ -40,7 +45,9 @@ export const Hero = () => {
       humidity: data.main.humidity,
       windspeed: data.wind.speed,
       Temp:data.main.temp
+     
     });
+    night();
       }catch(err){
         console.log(err);
       }
