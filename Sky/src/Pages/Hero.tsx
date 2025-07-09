@@ -29,9 +29,9 @@ export const Hero = () => {
      const hours  :any = now.getHours();
      const night = () :void => {
       if(hours>=19){
-        setsun(false);
+        setsun(true);
        }else {
-      setsun(true);
+      setsun(false);
         }
      }
     
@@ -40,6 +40,7 @@ export const Hero = () => {
          const url =`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${'72c183bfde0f64045a4054a529728e63'}`;
          const response = await fetch(url);
          const data = await response.json();
+          
          console.log(data);
             setWeatherData({
       humidity: data.main.humidity,
@@ -60,6 +61,9 @@ export const Hero = () => {
     }
    
   },[])
+  useEffect(()=>{
+    night();
+  },[now])
   return (
     <div className="min-h-screen my-auto min-w-screen p-10 flex flex-col justify-center-safe items-center font-semibold ">
         <div className="font-Abel my-2 text-3xl tracking-widest flex gap-x-2 animate-pulse">Sky - <div> Weather App</div></div>
