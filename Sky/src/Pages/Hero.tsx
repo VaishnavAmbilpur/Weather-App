@@ -91,7 +91,7 @@ export const Hero = () => {
         <footer className="m-4 fixed bottom-2 w-full flex justify-center-safe  items-center-safe  text-md">
           <div className="font-Abel font-extrabold m-3"><span className="mx-2">---</span><span className="font-mono mx-2 tracking-tighter font-bold text-sky-400"><span className="text-xl">V</span>aishnav</span></div>
            <Avatar className="h-10 w-10">
-  <AvatarImage src="/src/assets/Profile 2.jpg" />
+  <AvatarImage src="https://i.pinimg.com/736x/2c/f1/64/2cf164d7ab7874612228f0afb80c490c.jpg" />
   <AvatarFallback>CN</AvatarFallback>
 </Avatar>
         </footer>
