@@ -77,7 +77,7 @@ export const Hero = () => {
             
             <div className="w-fit border-2 rounded-lg border-accent-foreground"> <Input type="text" placeholder="City" ref={city} ></Input></div><div><Button size={"lg"} onClick={()=>{toast(`Weather of ${city.current?.value}`);if(city.current?.value){search(city.current?.value)}}}><SearchIcon ></SearchIcon></Button></div>  <ModeToggle/></div>
             
-            <div className="w-full flex mt-10 justify-center flex-col items-center-safe">{sun===false && <div className="hover:rotate-180 transition-all delay-250"><SunIcon  size={80}></SunIcon></div>}{sun && <div className="hover:rotate-180 transition-all delay-250"><MoonIcon size={80}></MoonIcon></div>}
+            <div className="w-full flex mt-10 justify-center flex-col items-center-safe">{sun===false && <div className="hover:rotate-180 duration-500 transition-all delay-250"><SunIcon  size={80}></SunIcon></div>}{sun && <div className="hover:rotate-180 transition-all delay-250 duration-500"><MoonIcon size={80}></MoonIcon></div>}
             <div className="mt-3 flex justify-center w-full text-4xl font-sans font-semibold flex-col ml-1"><div>{Math.round(weatherData.Temp)}&deg;C</div><div className="text-2xl ">{city.current?.value}</div></div></div>
             <div className="w-full p-1 mt-10 flex justify-between items-center-safe">
                   <div className="w-fit flex flex-row gap-x-3 border-1 border-accent-foreground rounded-xl p-3 hover:scale-110 delay-150 transition-all "><HeaterIcon></HeaterIcon>
