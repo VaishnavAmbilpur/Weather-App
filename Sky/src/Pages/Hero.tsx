@@ -52,7 +52,7 @@ export const Hero = () => {
     });
     night();
       }catch(err){
-        toast("Error is Fetching Data")
+        toast.error("Error is Fetching Data")
       }finally{
         
       }
@@ -71,21 +71,39 @@ export const Hero = () => {
   return (
     <div className="min-h-screen my-auto min-w-screen p-10 flex flex-col justify-center-safe items-center font-semibold ">
      
-        <div className="font-Abel my-2 text-3xl tracking-widest flex gap-x-2 animate-pulse font-extrabold">Sky - <div> Weather App</div></div>
+        <div className="font-Abel my-2 text-3xl tracking-widest flex gap-x-2  font-extrabold">Sky - <div> Weather App</div></div>
         <div className="border-1 border-accent-foreground h-100 w-88 p-4 rounded-2xl">
             <div className="w-full flex justify-between h-fit gap-x-2 items-center">
             
-            <div className="w-fit border-2 rounded-lg border-accent-foreground"> <Input type="text" placeholder="City" ref={city} ></Input></div><div><Button size={"lg"} onClick={()=>{toast(`Weather of ${city.current?.value}`);if(city.current?.value){search(city.current?.value)}}}><SearchIcon ></SearchIcon></Button></div>  <ModeToggle/></div>
+            <div className="w-fit border-2 rounded-lg border-accent-foreground"> <Input type="text" placeholder="City" ref={city} ></Input></div><div><Button size={"lg"} onClick={()=>{toast.success(`Weather of ${city.current?.value}`);if(city.current?.value){search(city.current?.value)}}}><SearchIcon ></SearchIcon></Button></div>  <ModeToggle/></div>
             
             <div className="w-full flex mt-10 justify-center flex-col items-center-safe">{sun===false && <div className="hover:rotate-180 duration-500 transition-all delay-250"><SunIcon  size={80}></SunIcon></div>}{sun && <div className="hover:rotate-180 transition-all delay-250 duration-500"><MoonIcon size={80}></MoonIcon></div>}
             <div className="mt-3 flex justify-center w-full text-4xl font-sans font-semibold flex-col ml-1"><div>{Math.round(weatherData.Temp)}&deg;C</div><div className="text-2xl ">{city.current?.value}</div></div></div>
             <div className="w-full p-1 mt-10 flex justify-between items-center-safe">
-                  <div className="w-fit flex flex-row gap-x-3 border-1 border-accent-foreground rounded-xl p-3 hover:scale-110 delay-150 transition-all "><HeaterIcon></HeaterIcon>
-                  <div className="flex flex-col">{weatherData.humidity}<div>Humidity</div></div>
-                  </div>
-                <div className="w-fit flex flex-row gap-x-3 border-1 rounded-xl p-3 border-accent-foreground hover:scale-110 delay-250 transition-all"><WindIcon></WindIcon>
+            
+                
+                  <div className="w-fit flex flex-row  gap-x-3 border-1 border-accent-foreground rounded-xl delay-150 transition-all ">
+                    <div className="relative group">
+                      <div className="bg-white absolute inset-2 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition duration-300"></div>
+                    <div className=" relative group flex flex-row dark:bg-black  p-3 gap-x-3 rounded-xl border-1">
+                   
+                      <HeaterIcon></HeaterIcon>
+                       <div className="flex flex-col">{weatherData.humidity}<div>Humidity</div></div>
+                    </div>
+                    </div>
+                       
+              </div>
+                 <div className="w-fit flex flex-row  gap-x-3 border-1 border-accent-foreground rounded-xl delay-150 transition-all ">
+                    <div className="relative group">
+                      <div className="bg-white absolute inset-2 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition duration-300"></div>
+                    <div className=" relative group flex flex-row dark:bg-black  p-3 gap-x-3 rounded-xl border-1">
+                   
+                      <WindIcon></WindIcon>
                   <div className="flex flex-col">{weatherData.windspeed}<div>Wind Speed</div></div>
-                  </div>
+                    </div>
+                    </div>
+                       
+              </div>
             </div>
         </div>
         <footer className="m-4 fixed bottom-2 w-full flex justify-center-safe  items-center-safe  text-md">
