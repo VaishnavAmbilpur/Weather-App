@@ -51,10 +51,11 @@ export const Hero = () => {
      
     });
     night();
+    toast.success(`Weather of ${city}`)
       }catch(err){
         toast.error("Error is Fetching Data")
       }finally{
-        toast.success(`Weather of ${city}`)
+        
       }
   }
   useEffect(()=>{
