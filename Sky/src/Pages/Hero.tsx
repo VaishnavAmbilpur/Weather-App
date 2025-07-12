@@ -53,7 +53,7 @@ export const Hero = () => {
     night();
     toast.success(`Weather of ${city}`)
       }catch(err){
-        toast.error("Error is Fetching Data")
+        toast.error("Invalid City name")
       }finally{
         
       }
