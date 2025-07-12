@@ -59,7 +59,7 @@ export const Hero = () => {
   }
   useEffect(()=>{
     if (city.current) {
-      city.current.value = "London"; // Directly set the value
+      city.current.value = "Delhi"; // Directly set the value
       //@ts-ignore
       search(city.current?.value);
     }
