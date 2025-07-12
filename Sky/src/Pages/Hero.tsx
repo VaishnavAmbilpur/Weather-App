@@ -73,7 +73,7 @@ export const Hero = () => {
     <div className="min-h-screen my-auto min-w-screen p-10 flex flex-col justify-center-safe items-center font-semibold ">
      
         <div className="font-Abel my-2 text-3xl tracking-widest flex gap-x-2  font-extrabold">Sky - <div> Weather App</div></div>
-        <div className="border-1 border-accent-foreground h-100 w-88 p-4 rounded-2xl">
+        <div className="border-1 border-accent-foreground h-100 w-88 p-4 rounded-xl">
             <div className="w-full flex justify-between h-fit gap-x-2 items-center">
             
             <div className="w-fit border-2 rounded-lg border-accent-foreground"> <Input type="text" placeholder="City" ref={city} ></Input></div><div><Button size={"lg"} onClick={()=>{if(city.current?.value){search(city.current?.value)}}}><SearchIcon ></SearchIcon></Button></div>  <ModeToggle/></div>
