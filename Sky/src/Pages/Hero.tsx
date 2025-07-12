@@ -54,7 +54,7 @@ export const Hero = () => {
       }catch(err){
         toast.error("Error is Fetching Data")
       }finally{
-        
+        toast.success(`Weather of ${city}`)
       }
   }
   useEffect(()=>{
@@ -75,7 +75,7 @@ export const Hero = () => {
         <div className="border-1 border-accent-foreground h-100 w-88 p-4 rounded-2xl">
             <div className="w-full flex justify-between h-fit gap-x-2 items-center">
             
-            <div className="w-fit border-2 rounded-lg border-accent-foreground"> <Input type="text" placeholder="City" ref={city} ></Input></div><div><Button size={"lg"} onClick={()=>{toast.success(`Weather of ${city.current?.value}`);if(city.current?.value){search(city.current?.value)}}}><SearchIcon ></SearchIcon></Button></div>  <ModeToggle/></div>
+            <div className="w-fit border-2 rounded-lg border-accent-foreground"> <Input type="text" placeholder="City" ref={city} ></Input></div><div><Button size={"lg"} onClick={()=>{if(city.current?.value){search(city.current?.value)}}}><SearchIcon ></SearchIcon></Button></div>  <ModeToggle/></div>
             
             <div className="w-full flex mt-10 justify-center flex-col items-center-safe">{sun===false && <div className="hover:rotate-180 duration-500 transition-all delay-250"><SunIcon  size={80}></SunIcon></div>}{sun && <div className="hover:rotate-180 transition-all delay-250 duration-500"><MoonIcon size={80}></MoonIcon></div>}
             <div className="mt-3 flex justify-center w-full text-4xl font-sans font-semibold flex-col ml-1"><div>{Math.round(weatherData.Temp)}&deg;C</div><div className="text-2xl ">{city.current?.value}</div></div></div>
